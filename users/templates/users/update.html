@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+<form method="post">
+  {% csrf_token %}
+  <h2>Настройки профиля</h2>
+  
+  {{ form.non_field_errors }} <!-- Общие ошибки формы -->
+
+  {% for field in form %}
+    <p>
+      {{ field.label_tag }}<br>
+      {{ field }}
+      {% if field.help_text %}
+        <br><small style="color: grey;">{{ field.help_text }}</small>
+      {% endif %}
+      {% for error in field.errors %}
+        <br><span style="color: red;">{{ error }}</span>
+      {% endfor %}
+    </p>
+  {% endfor %}
+
+  <button type="submit">Сохранить изменения</button>
+</form>
+<a href="{% url 'profile_detail' user.pk %}">Отмена</a>

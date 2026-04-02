@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+<h1>Профиль пользователя: {{ profile.username }}</h1>
+<ul>
+  <li><strong>Имя:</strong> {{ profile.name|default:"Не указано" }}</li>
+  <li><strong>Email:</strong> {{ profile.email }}</li>
+  <li><strong>О себе:</strong> {{ profile.bio|default:"Пока пусто" }}</li>
+  <li><strong>Любимый питомец:</strong> {{ profile.favourite_pet|default:"Нет" }}</li>
+</ul>
+
+{% if user.pk == profile.pk %}
+  <a href="{% url 'user_update' profile.pk %}">Редактировать мой профиль</a>
+{% endif %}
