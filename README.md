@@ -17,3 +17,4 @@ python manage.py test
 ```bash
 python manage.py runserver
 ```
+[![codecov](https://codecov.io)](https://codecov.io)
