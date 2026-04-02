@@ -1,0 +1,6 @@
+db.sqlite3
+.coverage
+coverage.xml
+__pycache__/
+*.pyc
+venv/
