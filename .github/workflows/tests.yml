@@ -33,5 +33,5 @@ jobs:
       # 6. Запускаем тесты и собираем статистику покрытия
       - name: Run Tests
         run: |
-          coverage run --source='.' manage.py test
-          coverage xml
+          python3 -m coverage run manage.py test
+          python3 -m coverage report
